@@ -72,6 +72,13 @@ npm install
 npm run dev
 ```
 
+With **Bun** (optional):
+
+```bash
+bun install
+bun run dev
+```
+
 The API listens on `http://localhost:4000` by default.
 
 ### 4) Frontend
@@ -80,6 +87,13 @@ The API listens on `http://localhost:4000` by default.
 cd frontend
 npm install
 npm run dev
+```
+
+With **Bun** (optional):
+
+```bash
+bun install
+bun run dev
 ```
 
 For local development, the Vite dev server proxies `/ask` and `/health` to `http://localhost:4000` (override with `VITE_DEV_PROXY_TARGET` if needed).
@@ -127,6 +141,19 @@ Notes:
 ## Deployment (two separate Vercel projects, one Git repo)
 
 Deploy **two Vercel projects** from the **same GitHub/GitLab repository**, each with a different **Root Directory**.
+
+### Git hosting checklist
+
+1. Create a new empty repository on GitHub or GitLab.
+2. From this folder on your machine:
+
+```bash
+git remote add origin <YOUR_REPO_SSH_OR_HTTPS_URL>
+git branch -M main
+git push -u origin main
+```
+
+3. Import the repository into Vercel twice (two projects), using the root directory settings below.
 
 ### Backend Vercel project
 
