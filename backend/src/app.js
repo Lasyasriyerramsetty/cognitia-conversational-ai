@@ -64,6 +64,7 @@ export function createApp() {
 
       return res.json({ answer });
     } catch (e) {
+      console.error("POST /ask failed:", e?.message || e);
       const status = Number(e?.status) || 500;
       const message =
         status >= 500 ? "Something went wrong. Please try again." : e.message;
