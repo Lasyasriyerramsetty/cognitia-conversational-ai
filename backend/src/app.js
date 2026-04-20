@@ -77,3 +77,6 @@ export function createApp() {
 
   return app;
 }
+
+// Keep a default export for serverless auto-detection safety.
+export default createApp();
